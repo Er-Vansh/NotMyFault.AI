@@ -5,7 +5,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-yellow?logo=javascript&logoColor=black)
 ![Gemini AI](https://img.shields.io/badge/AI-Gemini-blueviolet?logo=google)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub stars](https://img.shields.io/github/stars/your-username/notmyfault-ai?style=social)
+
 
 ---
 
