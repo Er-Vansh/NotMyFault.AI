@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotMyFault.AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">NotMyFault.AI - AI Excuse Generator</h1>
+                <p class="app-subtitle">Generate creative and believable excuses for any situation</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- API Key Section -->
+            <div class="api-key-section">
+                <div class="api-key-input-group">
+                    <label for="apiKey" class="form-label">Gemini API Key</label>
+                    <div class="input-with-toggle">
+                        <input type="password" id="apiKey" class="form-control api-key-input" placeholder="Enter your Gemini API key">
+                        <button type="button" class="toggle-visibility-btn" aria-label="Toggle API key visibility">
+                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <button type="button" class="btn btn--sm btn--primary save-api-key-btn">Save Key</button>
+                    <div class="api-key-status">
+                        <span class="status status--info" id="apiKeyStatus">API key not set</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <p>👋 Welcome! I'm your AI Excuse Generator. Fill out the form below to get started, and I'll create the perfect excuse for your situation using real AI intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Typing Indicator -->
+                <div class="typing-indicator hidden" id="typingIndicator">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Form -->
+            <div class="form-container">
+                <form id="excuseForm" class="excuse-form">
+                    <div class="form-grid">
+                        <!-- Situation -->
+                        <div class="form-group form-group--full">
+                            <label for="situation" class="form-label">Situation</label>
+                            <textarea id="situation" class="form-control" rows="3" placeholder="Describe the situation you need an excuse for..."></textarea>
+                        </div>
+
+                        <!-- Category -->
+                        <div class="form-group">
+                            <label for="category" class="form-label">Category</label>
+                            <select id="category" class="form-control">
+                                <option value="">Select category</option>
+                                <option value="medical">Medical</option>
+                                <option value="work">Work</option>
+                                <option value="family">Family</option>
+                                <option value="transport">Transport</option>
+                                <option value="personal">Personal</option>
+                            </select>
+                        </div>
+
+                        <!-- Urgency Level -->
+                        <div class="form-group">
+                            <label for="urgency" class="form-label">Urgency Level</label>
+                            <select id="urgency" class="form-control">
+                                <option value="">Select urgency</option>
+                                <option value="1">1 - Very Low</option>
+                                <option value="2">2 - Low</option>
+                                <option value="3">3 - Low-Medium</option>
+                                <option value="4">4 - Medium</option>
+                                <option value="5">5 - Medium</option>
+                                <option value="6">6 - Medium-High</option>
+                                <option value="7">7 - High</option>
+                                <option value="8">8 - High</option>
+                                <option value="9">9 - Very High</option>
+                                <option value="10">10 - Critical</option>
+                            </select>
+                        </div>
+
+                        <!-- Formality Level -->
+                        <div class="form-group">
+                            <label for="formality" class="form-label">Formality Level</label>
+                            <select id="formality" class="form-control">
+                                <option value="">Select formality</option>
+                                <option value="casual">Casual</option>
+                                <option value="semi-formal">Semi-formal</option>
+                                <option value="formal">Formal</option>
+                            </select>
+                        </div>
+
+                        <!-- Target Audience -->
+                        <div class="form-group">
+                            <label for="audience" class="form-label">Target Audience</label>
+                            <select id="audience" class="form-control">
+                                <option value="">Select audience</option>
+                                <option value="friend">Friend</option>
+                                <option value="colleague">Colleague</option>
+                                <option value="boss">Boss</option>
+                                <option value="family">Family</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--primary generate-excuse-btn">
+                            <span class="btn-text">Generate Excuse</span>
+                            <div class="btn-loading hidden">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                        <button type="button" class="btn btn--secondary generate-proof-btn" disabled id="generateProofBtn">
+                            Generate Proof
+                        </button>
+                        <button type="button" class="btn btn--outline clear-chat-btn">
+                            Clear Chat
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
