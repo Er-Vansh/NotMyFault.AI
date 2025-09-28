@@ -59,8 +59,8 @@ Built with **HTML5, CSS3, JavaScript**, and powered by **Google’s Gemini AI AP
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/notmyfault-ai.git
-cd notmyfault-ai
+git clone https://github.com/Er-Vansh/NotMyFault.AI.git
+cd NotMyFault.AI
 ```
 
 ### 2️⃣ Open in Browser
